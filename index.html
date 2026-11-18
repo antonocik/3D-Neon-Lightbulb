@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An interactive 3D neon lightbulb built with Three.js, physical glass, and bloom."
+    />
+    <title>3D Neon Lightbulb</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="viewport" aria-label="Interactive 3D neon lightbulb"></div>
+
+    <header class="hud top">
+      <h1><span class="spark">◍</span> 3D Neon Lightbulb</h1>
+      <p>Drag to orbit · scroll to zoom</p>
+    </header>
+
+    <aside class="hud panel" id="controls">
+      <label class="field">
+        <span>Neon colour <output id="hue-value">190°</output></span>
+        <input id="hue" type="range" min="0" max="359" value="190" step="1" />
+      </label>
+
+      <label class="field">
+        <span>Power <output id="power-value">100%</output></span>
+        <input id="power" type="range" min="0" max="100" value="100" step="1" />
+      </label>
+
+      <label class="field">
+        <span>Bloom <output id="bloom-value">0.28</output></span>
+        <input id="bloom" type="range" min="0" max="200" value="28" step="1" />
+      </label>
+
+      <div class="row">
+        <label class="toggle">
+          <input id="rotate" type="checkbox" checked />
+          <span>Auto-rotate</span>
+        </label>
+        <button id="reset" type="button">Reset view</button>
+      </div>
+
+      <div class="swatches" id="swatches"></div>
+    </aside>
+
+    <footer class="hud bottom">
+      <span id="status">WebGL ready</span>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
